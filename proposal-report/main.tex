@@ -1,0 +1,98 @@
+\documentclass[oneside,numberorder]{csbachelor}
+%==============================================================
+%==============================================================
+\usepackage{url}
+%分章节显示参考文献
+\usepackage{sectionbib}{chapterbib}
+
+%一些全局工具的定义
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\ud}{\mathop{\mathrm{{}d}}\mathopen{}}
+\newenvironment{abstract}{\vskip.075in\centerline{\bf
+摘要}\vspace{0.2ex}\begin{quotation}}{\par\end{quotation}}
+\newenvironment{references}{\vskip.075in{\bf
+参考文献}\vspace{0.2ex}}{\par}
+\usepackage[unicode=true,colorlinks,linkcolor=black,anchorcolor=black,citecolor=black]{hyperref}
+
+\AtEndDocument{\hypersetup{
+					pdfauthor={\zjuauthornamee},
+            		pdftitle={本科生毕业论文开题报告},
+            		pdfproducer={XeLaTeX with hyperref},
+            		pdfcreator={XeLaTeX}}}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
+%==============================================================
+%==============================================================
+\begin{document}
+%==============================================================
+%==============================================================
+
+  %论文题目：{中文}{英文}
+  \zjutitle{}%
+           {}
+  %作者：{中文姓名}{英文}{学号}
+  \zjuauthor{}{}{}
+  %指导教师：{导师中文名}{导师英文名}
+  \zjumentor{}{}
+  %个人信息：{年级}{专业名称}
+  \zjuinfo{}{}
+  %学院信息：{学院中文}{学院英文}
+  \zjucollege{计算机科学与技术学院}{College of Computer Science and Technology}
+
+%==============================================================
+
+  %封面
+  \input{data/cover}
+  %导师要求
+  \input{data/mentor}
+  %成绩评定
+  \include{data/eval}
+
+%==============================================================
+%这部分不需要自己修改。
+
+  %目录页眉页脚（罗马数字）
+  \pagenumbering{Roman}
+  \fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\xiaowu\songti 浙江大学计算机科学与技术学院本科毕业论文}
+  \fancyhead[R]{\xiaowu\songti 目录}
+  \fancyfoot[C]{\xiaowu\thepage}}
+  \fancyhf{}
+  \fancyhead[L]{\xiaowu\songti 浙江大学计算机科学与技术学院本科毕业论文}
+  \fancyhead[R]{\xiaowu\songti\leftmark}
+  \fancyfoot[C]{\xiaowu\thepage}
+
+  %目次页
+  \tableofcontents
+
+  \chaptermark{目录}
+  %\addcontentsline{toc}{chapter}{目录}
+
+  %正文页眉页脚（阿拉伯数字）
+  \mainmatter
+  \pagenumbering{arabic}
+  \fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\xiaowu\songti 浙江大学计算机科学与技术学院本科毕业论文}
+  \fancyhead[R]{\xiaowu\songti\leftmark}
+  \fancyfoot[C]{\xiaowu\thepage}}
+  \fancyhf{}
+  \fancyhead[L]{\xiaowu\songti 浙江大学计算机科学与技术学院本科毕业论文}
+  \fancyhead[R]{\xiaowu\songti\leftmark}
+  \fancyfoot[C]{\xiaowu\thepage}
+
+%==============================================================
+
+  \include{data/report}
+  \include{data/survey}
+  \include{data/translation}
+
+%==============================================================
+%这也是个不需要自己修改的部分。
+
+  \backmatter %结束章节自动编号
+
+%==============================================================
+\end{document}
