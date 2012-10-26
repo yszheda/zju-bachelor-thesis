@@ -1,3 +1,3 @@
-ZJU Bachelor's Thesis LaTex Template
+ZJU Bachelor's Thesis LaTeX Template
 ====================================
 by pluskid, remenberli, chevalun, yszheda
